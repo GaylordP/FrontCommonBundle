@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-md-6 mb-3 mb-md-0 pr-md-2 d-flex">
+        <div class="card flex-grow-1">
+            <div class="card-header">
+                <h2 class="h6 mb-0">
+                    <i class="fas fa-map-marker-alt"></i>
+                    {{ 'title.legal.our'|trans({}, 'front_common') }}
+                </h2>
+            </div>
+            <div class="card-body card-body-legal">
+                <dl>
+                    {% if parameters.owner.name %}
+                        <dt>
+                            {{ parameters.owner.name|raw }} :
+                        </dt>
+                    {% endif %}
+                    {% if parameters.owner.address %}
+                        <dd>
+                            {{ parameters.owner.address|raw }}
+                        </dd>
+                    {% endif %}
+                    {% if parameters.owner.email %}
+                        <dt>
+                            {{ 'label.email'|trans({}, 'front_common') }} :
+                        </dt>
+                        <dd>
+                            {{ parameters.owner.email|replace({
+                                '{{link_contact}}': path('contact'),
+                            })|raw }}
+                        </dd>
+                    {% endif %}
+                    {% if parameters.owner.phone %}
+                        <dt>
+                            {{ 'label.phone'|trans({}, 'front_common') }} :
+                        </dt>
+                        <dd>
+                            {{ parameters.owner.phone|raw }}
+                        </dd>
+                    {% endif %}
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 pl-md-2 d-flex">
+        <div class="card flex-grow-1">
+            <div class="card-header">
+                <h2 class="h6 mb-0">
+                    <i class="fas fa-server"></i>
+                    {{ 'title.legal.host'|trans({}, 'front_common') }}
+                </h2>
+            </div>
+            <div class="card-body card-body-legal">
+                <dl>
+                    <dt>
+                        {{ parameters.host.name }} :
+                    </dt>
+                    <dd{% if parameters.host.legal %} class="mb-0"{% endif %}>
+                        {{ parameters.host.address|raw }}
+                    </dd>
+                    {% if parameters.host.legal %}
+                        <dd>
+                            {{ parameters.host.legal }}
+                        </dd>
+                    {% endif %}
+                    {% if parameters.host.siret %}
+                        <dt>
+                            {{ 'label.siret'|trans({}, 'front_common') }} :
+                        </dt>
+                        <dd>
+                            {{ parameters.host.siret }}
+                        </dd>
+                    {% endif %}
+                    {% if parameters.host.immatriculation %}
+                        <dt>
+                            {{ 'label.immatriculation'|trans({}, 'front_common') }} :
+                        </dt>
+                        <dd>
+                            {{ parameters.host.immatriculation }}
+                        </dd>
+                    {% endif %}
+                    {% if parameters.host.ape %}
+                        <dt>
+                            {{ 'label.ape'|trans({}, 'front_common') }} :
+                        </dt>
+                        <dd>
+                            {{ parameters.host.ape }}
+                        </dd>
+                    {% endif %}
+                    {% if parameters.host.tva %}
+                        <dt>
+                            {{ 'label.tva'|trans({}, 'front_common') }} :
+                        </dt>
+                        <dd>
+                            {{ parameters.host.tva }}
+                        </dd>
+                    {% endif %}
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

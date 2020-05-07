@@ -1,0 +1,66 @@
+{% set rightPanel = false %}
+
+{% if whatsapp %}
+    {% set rightPanel = true %}
+{% endif %}
+
+{% if true == rightPanel %}
+    <div class="row">
+        <div class="col-md-7 mb-3 mb-md-0 pr-md-2 d-flex">
+{% endif %}
+            <div class="card{% if true == rightPanel %} flex-grow-1{% endif %}">
+                <div class="card-header">
+                    <h2 class="h6 mb-0">
+                        <i class="fas fa-at"></i>
+                        {{ 'title.contact.email'|trans({}, 'front_common') }}
+                    </h2>
+                </div>
+                <div class="card-body">
+                    {% if app.user is null %}
+                        <div class="alert alert-warning">
+                            <p class="mb-0">
+                                {{ 'contact.logout'|trans(
+                                    {
+                                        '%link%': path('login'),
+                                    },
+                                    'front_common'
+                                )|raw }}
+                            </p>
+                        </div>
+                    {% endif %}
+                    {{ form_new(
+                        form,
+                        'action.send'|trans({}, 'front_common'),
+                        'fas fa-paper-plane'
+                    ) }}
+                </div>
+            </div>
+{% if true == rightPanel %}
+        </div>
+        <div class="col-md-5 pl-md-2">
+            {% if null != whatsapp %}
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="h6 mb-0">
+                            <i class="fab fa-whatsapp"></i>
+                            {{ 'title.contact.whatsapp'|trans({}, 'front_common') }}
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            {{ 'contact.whatsapp.message1'|trans(
+                                {
+                                    '%whatsapp%': whatsapp,
+                                },
+                                'front_common'
+                            ) }}
+                        </p>
+                        <p class="mb-0">
+                            {{ 'contact.whatsapp.message2'|trans({}, 'front_common') }}
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

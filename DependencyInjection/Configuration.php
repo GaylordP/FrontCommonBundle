@@ -1,0 +1,98 @@
+<?php
+
+namespace GaylordP\FrontCommonBundle\DependencyInjection;
+
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+
+class Configuration implements ConfigurationInterface
+{
+    public function getConfigTreeBuilder(): TreeBuilder
+    {
+        $treeBuilder = new TreeBuilder('front_common');
+
+        $treeBuilder->getRootNode()
+            ->children()
+                ->arrayNode('contact')
+                    ->addDefaultsIfNotSet()
+                    ->isRequired()
+                    ->children()
+                        ->booleanNode('enabled')
+                            ->defaultTrue()
+                        ->end()
+                        ->scalarNode('email')
+                            ->isRequired()
+                        ->end()
+                        ->scalarNode('phone')
+                            ->defaultNull()
+                        ->end()
+                        ->scalarNode('whatsapp')
+                            ->defaultNull()
+                        ->end()
+                    ->end()
+                ->end()
+                ->arrayNode('legal')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->booleanNode('enabled')
+                            ->defaultTrue()
+                        ->end()
+                        ->arrayNode('owner')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('name')
+                                    ->defaultNull()
+                                ->end()
+                                ->scalarNode('address')
+                                    ->defaultNull()
+                                ->end()
+                                ->scalarNode('email')
+                                    ->defaultNull()
+                                ->end()
+                                ->scalarNode('phone')
+                                    ->defaultNull()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode('host')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('name')
+                                    ->defaultValue('SAS OVH')
+                                ->end()
+                                ->scalarNode('address')
+                                    ->defaultValue('2 rue Kellermann <br> 59100 Roubaix - France <br>')
+                                ->end()
+                                ->scalarNode('legal')
+                                    ->defaultValue('SAS au capital de 10 069 020 €')
+                                ->end()
+                                ->scalarNode('siret')
+                                    ->defaultValue('424 761 419 00045')
+                                ->end()
+                                ->scalarNode('immatriculation')
+                                    ->defaultValue('RCS Lille Métropole')
+                                ->end()
+                                ->scalarNode('ape')
+                                    ->defaultValue('2620Z')
+                                ->end()
+                                ->scalarNode('tva')
+                                    ->defaultValue('FR 22 424 761 419')
+                                ->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+                ->arrayNode('term')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->booleanNode('enabled')
+                            ->defaultTrue()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
+
+        return $treeBuilder;
+    }
+}

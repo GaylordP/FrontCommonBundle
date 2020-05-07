@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="action.send">
+                <source>action.send</source>
+                <target>Envoyer</target>
+            </trans-unit>
+
+            <trans-unit id="contact.created_successfully">
+                <source>contact.created_successfully</source>
+                <target>Nous avons bien reçu votre message. Vous recevrez très rapidement une réponse sur l'adresse e-mail « %email% ».</target>
+            </trans-unit>
+            <trans-unit id="contact.logout">
+                <source>contact.logout</source>
+                <target><![CDATA[Vous n'êtes pas connecté.<br> Si vous êtes déjà enregistré, nous vous invitons à <a href="%link%">vous connecter</a> afin de mieux suivre votre demande.]]></target>
+            </trans-unit>
+
+            <trans-unit id="label.ape">
+                <source>label.ape</source>
+                <target>Code APE</target>
+            </trans-unit>
+            <trans-unit id="label.contact_name">
+                <source>label.contact_name</source>
+                <target>Prénom et nom, ou nom d'utilisateur</target>
+            </trans-unit>
+            <trans-unit id="label.email">
+                <source>label.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="label.immatriculation">
+                <source>label.immatriculation</source>
+                <target>Immatriculation</target>
+            </trans-unit>
+            <trans-unit id="label.message">
+                <source>label.message</source>
+                <target>Message</target>
+            </trans-unit>
+            <trans-unit id="label.phone">
+                <source>label.phone</source>
+                <target>Téléphone</target>
+            </trans-unit>
+            <trans-unit id="label.siret">
+                <source>label.siret</source>
+                <target>SIRET</target>
+            </trans-unit>
+            <trans-unit id="label.tva">
+                <source>label.tva</source>
+                <target>TVA Intracommunautaire</target>
+            </trans-unit>
+
+            <trans-unit id="title.contact">
+                <source>title.contact</source>
+                <target>Nous contacter</target>
+            </trans-unit>
+            <trans-unit id="title.contact.email">
+                <source>title.contact.email</source>
+                <target>Nous envoyer un e-mail</target>
+            </trans-unit>
+            <trans-unit id="title.contact.whatsapp">
+                <source>title.contact.whatsapp</source>
+                <target>Notre WhatsApp</target>
+            </trans-unit>
+            <trans-unit id="title.legal">
+                <source>title.legal</source>
+                <target>Mentions légales</target>
+            </trans-unit>
+            <trans-unit id="title.legal.host">
+                <source>title.legal.host</source>
+                <target>Hébergement de nos serveurs</target>
+            </trans-unit>
+            <trans-unit id="title.legal.our">
+                <source>title.legal.our</source>
+                <target>Nos mentions légales</target>
+            </trans-unit>
+            <trans-unit id="title.term">
+                <source>title.term</source>
+                <target>Conditions générales d'utilisation</target>
+            </trans-unit>
+
+            <trans-unit id="contact.whatsapp.message1">
+                <source>contact.whatsapp.message1</source>
+                <target>Vous pouvez nous contacter par WhatsApp au numéro suivant : %whatsapp%.</target>
+            </trans-unit>
+            <trans-unit id="contact.whatsapp.message2">
+                <source>contact.whatsapp.message2</source>
+                <target>Afin de garantir la qualité de nos réponses, seuls les messages textes sont acceptés. Les appels sont systématiquement refusés.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

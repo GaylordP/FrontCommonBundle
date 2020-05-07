@@ -1,0 +1,14 @@
+{% extends 'default/template/template.html.twig' %}
+
+{% block title %}
+    <i class="{{ include('@FrontCommon/_legal_ico.html.twig', with_context = false) }}"></i>
+    {{ 'title.legal'|trans({}, 'front_common') }}
+{% endblock %}
+
+{% block content %}
+    {{ include('@FrontCommon/_legal_content.html.twig',
+        {
+            'parameters': parameters,
+        }, with_context = false
+    ) }}
+{% endblock %}

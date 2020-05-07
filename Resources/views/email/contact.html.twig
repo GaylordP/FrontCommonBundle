@@ -1,0 +1,26 @@
+{% extends 'email/template/template.html.twig' %}
+
+{% block content %}
+    <p>
+        <strong>
+            {{ 'label.contact_name'|trans({}, 'front_common') }} :
+        </strong>
+        <br>
+        {{ contact.name }}
+        {% if null != contact.user %}(Utilisateur enregistré : #{{ contact.user.id }}){% endif %}
+    </p>
+    <p>
+        <strong>
+            {{ 'label.email'|trans({}, 'user') }} :
+        </strong>
+        <br>
+        {{ contact.email }}
+    </p>
+    <p>
+        <strong>
+            {{ 'label.message'|trans({}, 'front_common') }} :
+        </strong>
+        <br>
+        {{ contact.message|nl2br }}
+    </p>
+{% endblock %}

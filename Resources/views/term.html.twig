@@ -1,0 +1,10 @@
+{% extends 'default/template/template.html.twig' %}
+
+{% block title %}
+    <i class="{{ include('@FrontCommon/_term_ico.html.twig', with_context = false) }}"></i>
+    {{ 'title.term'|trans({}, 'front_common') }}
+{% endblock %}
+
+{% block content %}
+    {{ include('@FrontCommon/_term_content.html.twig', with_context = false) }}
+{% endblock %}

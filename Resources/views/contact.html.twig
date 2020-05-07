@@ -1,0 +1,15 @@
+{% extends 'default/template/template.html.twig' %}
+
+{% block title %}
+    <i class="{{ include('@FrontCommon/_contact_ico.html.twig', with_context = false) }}"></i>
+    {{ 'title.contact'|trans({}, 'front_common') }}
+{% endblock %}
+
+{% block content %}
+    {{ include('@FrontCommon/_contact_content.html.twig',
+        {
+            'form': form,
+            'whatsapp': whatsapp,
+        }, with_context = false
+    ) }}
+{% endblock %}

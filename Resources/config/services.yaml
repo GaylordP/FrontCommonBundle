@@ -1,0 +1,5 @@
+services:
+    GaylordP\FrontCommonBundle\Controller\FrontCommonController:
+        tags: ['controller.service_arguments']
+        autoconfigure: true
+        autowire: true

@@ -1,0 +1,22 @@
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-dismissible alert-{{ label }}" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="{{ 'action.close'|trans({}, 'front_common') }}">
+                <i class="fas fa-times"></i>
+            </button>
+            <p class="mb-0">
+                {% if message is iterable %}
+                    {% if 1 == message|length %}
+                        {{ message.0|trans|raw }}
+                    {% elseif 2 == message|length  %}
+                        {{ message.0|trans(message.1)|raw }}
+                    {% elseif 3 == message|length  %}
+                        {{ message.0|trans(message.1, message.2)|raw }}
+                    {% endif %}
+                {% else %}
+                    {{ message|trans|raw }}
+                {% endif %}
+            </p>
+        </div>
+    {% endfor %}
+{% endfor %}

@@ -2,6 +2,10 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
         <body>
+            <trans-unit id="action.close">
+                <source>action.close</source>
+                <target>Fermer</target>
+            </trans-unit>
             <trans-unit id="action.send">
                 <source>action.send</source>
                 <target>Envoyer</target>
@@ -47,6 +51,11 @@
             <trans-unit id="label.tva">
                 <source>label.tva</source>
                 <target>TVA Intracommunautaire</target>
+            </trans-unit>
+
+            <trans-unit id="link.current">
+                <source>link.current</source>
+                <target>(actuel)</target>
             </trans-unit>
 
             <trans-unit id="menu.contact">

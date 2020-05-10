@@ -49,6 +49,19 @@
                 <target>TVA Intracommunautaire</target>
             </trans-unit>
 
+            <trans-unit id="menu.contact">
+                <source>menu.contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="menu.legal">
+                <source>menu.legal</source>
+                <target>Mentions légale</target>
+            </trans-unit>
+            <trans-unit id="menu.term">
+                <source>menu.term</source>
+                <target>Conditions générales d'utilisation</target>
+            </trans-unit>
+
             <trans-unit id="title.contact">
                 <source>title.contact</source>
                 <target>Nous contacter</target>

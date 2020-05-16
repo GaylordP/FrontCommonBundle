@@ -32,15 +32,7 @@ class FrontCommon
             url: $element.attr('href'),
             dataType: 'json',
             complete: function(xhr) {
-                let json = xhr.responseJSON
-
-                if (false === Array.isArray(json)) {
-                    self.ajaxJsonResponse(json)
-                } else {
-                    for (let i = 0; i < json.length; i++) {
-                        self.ajaxJsonResponse(json[i])
-                    }
-                }
+                self.ajaxJsonResponse(xhr.responseJSON)
             },
         })
     }
@@ -55,15 +47,7 @@ class FrontCommon
             dataType: 'json',
             complete: function(xhr) {
                 $form[0].reset()
-                let json = xhr.responseJSON
-
-                if (false === Array.isArray(json)) {
-                    self.ajaxJsonResponse(json)
-                } else {
-                    for (let i = 0; i < json.length; i++) {
-                        self.ajaxJsonResponse(json[i])
-                    }
-                }
+                self.ajaxJsonResponse(xhr.responseJSON)
             },
         })
     }
@@ -71,6 +55,13 @@ class FrontCommon
     ajaxJsonResponse(json)
     {
         let self = this
+
+        if (true === Array.isArray(json)) {
+            for (let i = 0; i < json.length; i++) {
+                return self.ajaxJsonResponse(json[i])
+            }
+        }
+
         let $target = $(json.target)
 
         if ('after' === json.action || 'append' === json.action || 'before' === json.action || 'prepend' === json.action) {

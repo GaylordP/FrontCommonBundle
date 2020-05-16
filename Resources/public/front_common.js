@@ -1,5 +1,9 @@
 import $ from 'jquery'
 
+$(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
 class FrontCommon
 {
     constructor()
@@ -70,6 +74,7 @@ class FrontCommon
         let $target = $(json.target)
 
         if ('after' === json.action || 'append' === json.action || 'before' === json.action || 'prepend' === json.action) {
+            console.log('ok');
             let $html = $(json.html)
             let $layer = $('<div class="bg-success" style="width: 100%; height: 100%; position: absolute; opacity: 0.25"></div>')
             $html.append($layer)
@@ -85,6 +90,9 @@ class FrontCommon
                     $target.before($html)
                 break;
                 case 'prepend':
+                    console.log('prepend');
+                    console.log($target);
+                    console.log($html);
                     $target.prepend($html)
                 break;
             }

@@ -149,4 +149,4 @@ class FrontCommon
     }
 }
 
-new FrontCommon()
+global.FrontCommon = new FrontCommon()

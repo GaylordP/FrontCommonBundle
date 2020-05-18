@@ -58,8 +58,10 @@ class FrontCommon
 
         if (true === Array.isArray(json)) {
             for (let i = 0; i < json.length; i++) {
-                return self.ajaxJsonResponse(json[i])
+                self.ajaxJsonResponse(json[i])
             }
+
+            return
         }
 
         let $target = $(json.target)
@@ -84,6 +86,9 @@ class FrontCommon
                 break;
             }
 
+            if ($html.attr('data-toggle') === 'tooltip') {
+                $html.tooltip()
+            }
             $html.find('[data-toggle="tooltip"]').tooltip()
 
             if (true === self.modalIsOpen) {
@@ -96,12 +101,22 @@ class FrontCommon
                 $layer.fadeOut()
             }, 5000)
         } else if ('html' === json.action) {
-            $target.html(json.html)
+            let $html = $(json.html)
+
+            $target.html($html)
+
+            if ($html.attr('data-toggle') === 'tooltip') {
+                $html.tooltip()
+            }
+            $html.find('[data-toggle="tooltip"]').tooltip()
         } else if ('replace' === json.action) {
             let $html = $(json.html)
 
             $target.replaceWith($html)
 
+            if ($html.attr('data-toggle') === 'tooltip') {
+                $html.tooltip()
+            }
             $html.find('[data-toggle="tooltip"]').tooltip()
         } else if ('show-modal' === json.action) {
             self.modal(json.title, json.body)

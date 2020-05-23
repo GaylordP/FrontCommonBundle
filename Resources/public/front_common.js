@@ -109,6 +109,8 @@ class FrontCommon
                 $html.tooltip()
             }
             $html.find('[data-toggle="tooltip"]').tooltip()
+        } else if ('remove' === json.action) {
+            $target.remove()
         } else if ('replace' === json.action) {
             let $html = $(json.html)
 

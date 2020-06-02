@@ -64,7 +64,7 @@
             </trans-unit>
             <trans-unit id="menu.legal">
                 <source>menu.legal</source>
-                <target>Mentions légale</target>
+                <target>Mentions légales</target>
             </trans-unit>
             <trans-unit id="menu.term">
                 <source>menu.term</source>

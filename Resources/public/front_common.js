@@ -150,6 +150,9 @@ class FrontCommon
             })
 
             this.$modal.on('hidden.bs.modal', function (e) {
+                self.$modal.find('.modal-title').html('')
+                self.$modal.find('.modal-body').html('')
+
                 self.modalIsOpen = false
             })
         }

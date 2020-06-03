@@ -122,6 +122,8 @@ class FrontCommon
             $html.find('[data-toggle="tooltip"]').tooltip()
         } else if ('show-modal' === json.action) {
             self.modal(json.title, json.body)
+        } else if ('text' === json.action) {
+            $target.html(json.text)
         }
     }
 

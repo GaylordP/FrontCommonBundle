@@ -66,7 +66,9 @@ class FrontCommon
 
         let $target = $(json.target)
 
-        if ('after' === json.action || 'append' === json.action || 'before' === json.action || 'prepend' === json.action) {
+        if ('addClass' === json.action) {
+            $target.addClass(json.class)
+        } else if ('after' === json.action || 'append' === json.action || 'before' === json.action || 'prepend' === json.action) {
             let $html = $(json.html)
             let $layer = $('<div class="bg-success" style="width: 100%; height: 100%; position: absolute; opacity: 0.25"></div>')
             $html.append($layer)
@@ -100,6 +102,19 @@ class FrontCommon
             setTimeout(function () {
                 $layer.fadeOut()
             }, 5000)
+        } else if ('attr' === json.action) {
+            $target.attr(json.attr, json.value)
+
+            if (
+                'title' === json.attr
+                    &&
+                $target.attr('data-toggle') === 'tooltip'
+            ) {
+                $target.tooltip('hide')
+
+                $target.attr('data-original-title', json.value)
+            }
+
         } else if ('html' === json.action) {
             let $html = $(json.html)
 
@@ -111,6 +126,8 @@ class FrontCommon
             $html.find('[data-toggle="tooltip"]').tooltip()
         } else if ('remove' === json.action) {
             $target.remove()
+        } else if ('removeClass' === json.action) {
+            $target.removeClass(json.class)
         } else if ('replace' === json.action) {
             let $html = $(json.html)
 
